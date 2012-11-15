@@ -1,0 +1,49 @@
+<html>                                                                  
+ 	<head>
+ 		<title>Globant :: Welcome to the HTML5 bootcamp</title>
+ 		<meta name="viewport" content="width=device-width, initial-scale=1">
+ 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+ 		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+ 		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>      
+
+ 	</head>
+ 	
+ 	<body>
+ 		<div data-role="page">
+ 			<div data-role="header" data-position="fixed"><h1>Welcome</h1>
+ 			<div data-role="navbar">
+	 	 	 	<ul>
+		 		  	<li><a href="index.php" data-transition="slide">Home</a></li>
+		 		  	<li><a href="credits.html" data-transition="slideup">Credits</a></li>
+		 		  	<li><a href="contact.html" class="ui-btn-active">Contact</a></li>
+				</ul> 
+			</div>
+ 	  	
+			</div>
+			<div data-role="content">
+			<h1> Contact Us... </h1> 
+			<form action="echo.cfm" method="post">
+             	<div data-role="fieldcontain">
+	             	<label for="name">Name:</label>
+	             	<input type="text" name="name" id="name"   />
+	           	</div>
+	           	<div data-role="fieldcontain">
+		           	<label for="email">Email:</label>
+		           	<input type="text" name="email" id="email"   />
+		           	</div>
+		       <div data-role="fieldcontain"> 
+			       <label for="msg">Message:</label>
+			       <textarea name="msg" id="msg"> </textarea> 
+			       </div>
+             <div data-role="fieldcontain">
+               <input type="submit" name="submit" value="Send" />
+               
+             </div>
+           </form>
+					
+		<div data-role="footer" data-position="fixed">Bootcamp 2012</div>	
+ 		</div>
+ 	
+ 	
+ 	</body>
+</html>
