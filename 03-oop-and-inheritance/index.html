@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="js/movie.js"></script> 
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>  
+		<script>
+	 			
+	 			$(document).ready(function() {
+		 			//do jQuery stuff when DOM is ready
+		 			doMovies();
+		 			 console.log("the document is ready");
+		 			});
+	 			
+	 			function doMovies(){
+ 					
+ 					$.ajax({
+ 						type: 'GET',
+ 						url: 'http://bootcamp.aws.af.cm/movies',
+ 						dataType:'json',
+ 						crossDomain: true,
+ 						
+ 						success: function (data){
+ 							
+ 							var listMovies= data.d.results;
+ 							
+ 							for (var i = 0 ; i < listMovies.length ; i ++ ) {
+ 								title=listMovies[i].Name;
+ 								id= listMovies[i].Id;
+ 								rating= listMovies[i].Rating;
+ 								var newMovie = new Movie(title,rating,id);
+ 							}
+ 							
+ 							console.log(movie[3].title); // i couldn ´t run this because in line 30 i have "Movie undefined"
+		 				},
+ 						error: function (response, status, xhr) {
+ 							$('div.fail')
+ 								.html(status+ ' - '+ xhr.status);
+ 						}
+
+
+
+ 					}); 						
+ 				}
+ 				
+ 						
+ 				
+	 			
+	 			/* extending */
+	 			function extend(ChildClass, ParentClass) {
+		 			ChildClass.prototype = new ParentClass();
+				    ChildClass.prototype.constructor = ChildClass;
+				    }
+				    
+				  var DownloadableMovie = function(){
+					  
+				  }
+				  
+				  DownloadableMovie.prototype.download = function(){
+					  console.log("Downloading: " + this.getTitle());
+					  
+				  } 		
+				  				  
+				  extend(DownloadableMovie, Movie);  
+				  
+				  
+				  // mixing class Social, this extends from class Movie
+				  var Social = { 
+					  share: function(friendName){
+						 console.log("Sharing " + this.getTitle() + "with" + friendName); 
+					  },
+					  
+					  like: function(){
+						  console.log("You click the Like button for the movie " + this.getTitle());
+					  }
+				  };
+				 
+				 // I used this function to do tests.
+ 				function init(){
+	 			//	var movie = new Movie ("Indiana Jones", 15, "R");
+	 				movie.play();
+	 				movie.stop();
+	 			//	movie.setTitle("Terminator");
+	 				movie.play();
+	 				movie.share('Gaston');
+	 				movie.like();
+	 			}
+	 	</script>		
+	</head>
+	
+	<body>	
+	
+	</body>
+
+</html>
