@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Using Handlebars</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/handlebars-1.0.rc.1.js"></script>
+		 
+	<script id="profile" type="text/x-handlebars-template">
+		<div class="entry">
+			<h1>{{title}}</h1>
+			<h3>{{actual}}</h3>
+		<div class="body">
+			<h4>{{listTitle}}</h4>
+			<img src="{{image}}"></img>
+			<ul class="info_list">
+				<li>Name: {{name}}</li>
+				<li>Birth: {{birth}}</li>
+				<li>Age: {{age}}</li>
+				<li>Marital Status: {{maritalStu}}</li>
+			</ul>
+			
+			<h4>{{subtitle1}}</h4>
+			<p>{{text1}}</p>
+			
+			<h4>{{exp}}</h4>
+			{{#list expierence}} {{place}} {{work}} {{/list}}
+				
+				
+			
+			</div>
+		</div>
+  	</script>
+	
+	</head>
+	
+	<body>
+	<div id="main">	</div>	
+	
+	
+
+		<script>
+		 window.onload = function(){
+			 
+			 var info = {
+			 	 title: 'My CV with Handlebars!',
+			 	 actual: 'Freelance Developer',
+				 name: 'Gaston Mira',
+				 image: 'http://user.photos.s3.amazonaws.com/user_45896.jpg',
+				 birth: '26th September 1987',
+				 age: '25',
+				 maritalStu: 'Single',
+				 subtitle1:'Extract',
+				 text1: 'I am a proactive, always instructing and preparing to give my best at work. I am very sociable, responsible and respectful.',
+				 exp: 'Expierence',
+				 expierence : [
+				 		{place:'ELSERVER:', work:' Technical Support.'},
+				 		{place:'cuentamundos.com.ar:', work:' Developer of the site which is for blind people.'},
+				 ]
+			 }
+		 
+			 
+			 Handlebars.registerHelper('list', function(items, options) {
+				 var out = '<ul>';
+
+				 for(var i=0, l=items.length; i<l; i++) {
+					 out = out + '<li>' + options.fn(items[i]) + '</li>';
+					 }
+
+					 return out + '</ul>';
+			 });
+			 
+			 
+		 	var source   = $('#profile').html();
+			var template = Handlebars.compile(source);
+			var context = info;
+			var html    = template(context);
+			$('#main').html(html);
+		
+		
+		
+     	 }			
+		</script>
+	
+	
+	</body>
+</html>
