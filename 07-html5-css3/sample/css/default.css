@@ -1,0 +1,84 @@
+* { padding: 2px; margin: 2px; }
+
+h1{
+	font-family: "arial",sans-serif;
+}
+
+p  {
+	font-family: "arial",sans-serif;
+	font-size: 18px;
+
+}
+
+
+li~li { 
+	padding-left: 5px; 
+	padding-right: 5px; 
+	border-left: 1px solid #000000 
+}
+
+a:hover
+{
+background-color:yellow;
+}
+
+#menu li {
+float: left;
+margin-right: 15px;
+}
+
+ul {
+list-style-type:none;
+margin:15px;
+padding:15px;
+}
+.hiOne{
+	background-color: red;
+}
+
+.hiTwo{
+	background-color: blue;
+}
+
+.hiThree{
+	background-color: yellow;
+}
+
+span[class^="hi"]{
+	background-color: red;
+}
+
+span[class$="One"]{
+	background-color: blue;
+}
+
+.link1{
+	color: red;
+	/**transform: rotate(40deg) scale(2.0);**/
+
+}
+
+.rotate{
+	-webkit-transform:rotate(-5deg);
+	transform: rotate(-5deg);
+	filter: progid : DXImageTransform.Microsoft.Matrix ( sizingMethod='auto expand', /* IE6-IE9 */ 
+        M11 = 0.9993908270190958, M12 = -0.03489949670250097, M21 =0.03489949670250097, M22 = 0.9993908270190958 );
+	zoom: 1;
+	margin: 10px 50px 50px 10px;
+}
+
+.link2{
+	color:green;
+}
+
+.art {
+	 border: 2px;
+	 -moz-box-shadow: 3px 3px 4px #444;
+     -webkit-box-shadow: 3px 3px 4px #444;
+ 	 box-shadow: 3px 3px 4px #444;
+ 	 -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444')";
+  	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444');
+}
+
+
+
