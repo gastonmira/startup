@@ -1,0 +1,19 @@
+#drop_zone{
+	width: 500px;
+	height: 100px;
+	border-style: dashed;
+}
+
+.title{
+	margin: 25px;
+}
+
+#map_canvas{
+	width: 600px; 
+	height: 400px; 
+	border-right: 1px 	solid #666666; 
+	border-bottom: 1px solid #666666; 
+	border-top: 1px solid #AAAAAA; 
+	border-left: 1px solid #AAAAAA; 
+	margin: 20px;
+}
